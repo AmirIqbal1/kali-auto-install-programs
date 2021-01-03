@@ -53,7 +53,7 @@ rm code*.deb
 #automatically gets my other script's
 echo "Grabbing other scripts: update-kali, rkhunter-check,"
 
-wget https://raw.githubusercontent.com/AmirIqbal1/auto-update-ubuntu-script/master/update.sh https://raw.githubusercontent.com/AmirIqbal1/rkhunter-script/master/rkhunter-check.sh
+wget https://raw.githubusercontent.com/AmirIqbal1/kali-auto-install-programs/main/update-kali.sh https://raw.githubusercontent.com/AmirIqbal1/rkhunter-script/master/rkhunter-check.sh
 
 #automatically chmods above scripts
 echo "chmodding those scripts"
