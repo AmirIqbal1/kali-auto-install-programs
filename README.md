@@ -1,7 +1,7 @@
 # kali-auto-install-programs
 This bash script will auto install selected desktop programs for Kali Linux.
 
-"chmod +x auto-kali-install-programs" the file before starting, and make sure you run as root!
+"chmod +x auto-kali-install-programs.sh" the file before starting, and make sure you run as root!
 
 Get's my other scripts's (update-kali.sh)
 
