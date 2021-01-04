@@ -12,3 +12,9 @@ Installs rkhunter (a rootkit hunter) which can be configured with the below link
 https://kifarunix.com/how-to-install-rkhunter-rootkit-hunter-on-ubuntu-18-04/
 
 To remove vscode errors when using "apt update", go to "/etc/apt/sources.list.d/vscode.list" file and change to "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main"
+
+Remember to setup zsh! and add this to your alias(nano /root/.zshrc)
+
+alias lal='ls -al' alias update.sh=' dpkg --configure -a && apt update && apt upgrade -y && apt install -f && apt clean && apt autoclean && apt autoremove -y ' 
+
+then (source /root/.zshrc) to apply changes.
