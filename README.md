@@ -15,6 +15,8 @@ To remove vscode errors when using "apt update", go to "/etc/apt/sources.list.d/
 
 Remember to setup zsh! and add this to your alias(nano /root/.zshrc) & in your user home folder!
 
+CHANGE $USER TO YOUR USERNAME.
+
 alias update.sh='
         dpkg --configure -a &&
         apt update &&
@@ -26,6 +28,6 @@ alias update.sh='
 '
 alias lscript='source /home/$USER/programs/lscript/l'
 alias sudo='sudo -s'
-alias sherlock='python3 /home/amir/programs/sherlock/sherlock/sherlock.py'
+alias sherlock='python3 /home/$USER/programs/sherlock/sherlock/sherlock.py'
 
 then (source /root/.zshrc) & (source /home/$USER/.zshrc) to apply changes.
