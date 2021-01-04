@@ -6,12 +6,10 @@ echo "This script will auto install all your programs. View the README file to s
 echo ""
 #updates system ready for packages download
 echo "getting system ready for packages to be installed"
-dpkg --configure -a
-apt update -y
-apt upgrade -y
-apt install -f
-apt clean
-apt autoclean
+dpkg --configure -a &&
+apt update &&
+apt upgrade -y &&
+apt install -y
 
 #these packages install from universe and kali's normal repo's
 #libwxbase3.0-0v5 & libwxgtk3.0-gtk3-0v5 are packages for veracrypt
@@ -74,10 +72,10 @@ apt install dangerzone -y
 
 #fixes any errors and auto cleans packages downloaded/ not needed anymore
 echo "auto cleaning now, and fixing any errors."
-dpkg --configure -a
-apt install -f
-apt clean
-apt autoclean
+dpkg --configure -a &&
+apt install -f &&
+apt clean &&
+apt autoclean &&
 apt autoremove -y
 
 echo ""
