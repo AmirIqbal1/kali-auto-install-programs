@@ -35,5 +35,6 @@ alias update.sh='
 alias lscript='source /home/$USER/programs/lscript/l'
 alias sudo='sudo -s'
 alias sherlock='python3 /home/$USER/programs/sherlock/sherlock/sherlock.py'
+alias servicestat='service --status-all'
 
 then (source /root/.zshrc) & (source /home/$USER/.zshrc) to apply changes.
