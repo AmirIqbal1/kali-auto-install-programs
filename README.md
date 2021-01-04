@@ -25,7 +25,7 @@ alias update.sh='
         apt clean &&
         apt autoclean &&
         apt autoremove -y
-'
+' 
 alias lscript='source /home/$USER/programs/lscript/l'
 alias sudo='sudo -s'
 alias sherlock='python3 /home/$USER/programs/sherlock/sherlock/sherlock.py'
