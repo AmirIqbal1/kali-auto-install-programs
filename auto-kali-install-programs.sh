@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#checks if your root
+## get UID 
+uid=$(id -u)
+ 
+## Check for it
+[ $uid -ne 0 ] && { echo "Only root may run this. Please login as root."; exit 1; }
+
 echo ""
 echo "This script will auto install all your programs. View the README file to see what gets installed."
 
