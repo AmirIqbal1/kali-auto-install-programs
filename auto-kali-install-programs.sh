@@ -16,14 +16,17 @@ apt autoclean
 #these packages install from universe and kali's normal repo's
 #libwxbase3.0-0v5 & libwxgtk3.0-gtk3-0v5 are packages for veracrypt
 
-apt install mat2 bleachbit curl deluge filezilla gufw git gimp gparted htop libreoffice-writer libwxbase3.0-0v5 libwxgtk3.0-gtk3-0v5 openvpn rkhunter snap snapd synaptic tilix virtualbox vlc unrar wget zip dialog python3-pip python3-setuptools zsh -y
+apt install mat2 bleachbit curl deluge docker.io filezilla gufw git gimp gparted htop libreoffice-writer libwxbase3.0-0v5 libwxgtk3.0-gtk3-0v5 openvpn rkhunter snap snapd synaptic tilix virtualbox vlc unrar wget zip dialog python3-pip python3-setuptools zsh gnupg apt-transport-https -y
 
 #install kali's top tools some of these are included by default
 echo "installing kali default other tools. Some of these are included by default"
-apt install kali-linux-default kali-tools-top10 
+apt install kali-linux-default kali-tools-top10 -y
 
 #enables and starts both the snapd and the snapd.apparmor services with the following command
 systemctl enable --now snapd apparmor
+systemctl enable docker --now
+#add yourself to the docker group
+usermod -aG docker $USER
 
 #install veracrypt, you will need to change link for newer version
 echo ""
@@ -33,7 +36,7 @@ dpkg -i veracrypt*.deb
 rm veracrypt*.deb
 
 echo""
-#install apps through snap
+#install nordpass
 echo "Installing snap packages"
 snap install nordpass
 
@@ -51,21 +54,22 @@ dpkg -i code*.deb
 rm code*.deb
 
 #automatically gets my other script's
-echo "Grabbing other scripts: update-kali, rkhunter-check,"
+echo "Grabbing other scripts: update-kali, rkhunter-check, kali-pentest-files"
 
-wget https://raw.githubusercontent.com/AmirIqbal1/kali-auto-install-programs/main/update-kali.sh https://raw.githubusercontent.com/AmirIqbal1/rkhunter-script/master/rkhunter-check.sh
+wget https://raw.githubusercontent.com/AmirIqbal1/kali-pentest-files/main/kali-pentest-files.sh https://raw.githubusercontent.com/AmirIqbal1/kali-auto-install-programs/main/update-kali.sh https://raw.githubusercontent.com/AmirIqbal1/rkhunter-script/master/rkhunter-check.sh
 
 #automatically chmods above scripts
 echo "chmodding those scripts"
-chmod +x update-kali.sh rkhunter-check.sh
+chmod +x kali-pentest-files.sh update-kali.sh rkhunter-check.sh
 
 #install dangerzone
 echo "installing dangerzone"
-apt update
-apt install curl gnupg apt-transport-https -y
+apt update -y
 curl -L https://packagecloud.io/firstlookmedia/code/gpgkey | sudo apt-key add -
+
+#change below link if you have different OS. Debain repo works with kali linux, just install docker with it (included above)
 echo "deb https://packagecloud.io/firstlookmedia/code/debian/ buster main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
-apt update
+apt update -y
 apt install dangerzone -y
 
 #fixes any errors and auto cleans packages downloaded/ not needed anymore
@@ -81,4 +85,3 @@ echo -e "\e[42mrkhunter has been installed, please configure it using link in RE
 
 echo ""
 echo "All done! You can check above to see if any errors occured. A system reboot is recommended."
-
