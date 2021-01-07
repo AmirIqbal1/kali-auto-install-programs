@@ -59,13 +59,13 @@ dpkg -i code*.deb
 rm code*.deb
 
 #automatically gets my other script's
-echo "Grabbing other scripts: auto-update, rkhunter-check, kali-pentest-files"
+echo "Grabbing other scripts: rkhunter-check, kali-pentest-files"
 
-wget https://raw.githubusercontent.com/AmirIqbal1/kali-pentest-files/main/kali-pentest-files.sh https://raw.githubusercontent.com/AmirIqbal1/auto-update-ubuntu-script/master/update.sh https://raw.githubusercontent.com/AmirIqbal1/rkhunter-script/master/rkhunter-check.sh
+wget https://raw.githubusercontent.com/AmirIqbal1/kali-pentest-files/main/kali-pentest-files.sh https://raw.githubusercontent.com/AmirIqbal1/rkhunter-script/master/rkhunter-check.sh
 
 #automatically chmods above scripts
 echo "chmodding those scripts"
-chmod +x kali-pentest-files.sh update.sh rkhunter-check.sh
+chmod +x kali-pentest-files.sh rkhunter-check.sh
 
 #install dangerzone
 echo "installing dangerzone"
