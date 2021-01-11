@@ -23,7 +23,7 @@ Remember to setup zsh! and add this to your alias(nano /root/.zshrc) & in your u
 
 CHANGE $USER TO YOUR USERNAME.
 
-alias update.sh='
+alias aptupdate='
         dpkg --configure -a &&
         apt update &&
         apt upgrade -y &&
