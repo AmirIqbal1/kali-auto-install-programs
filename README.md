@@ -27,10 +27,10 @@ alias ll='ls -l'
 alias la='ls -A'  
 alias l='ls -CF'  
 alias aptupdate='dpkg --configure -a && apt update && apt upgrade -y && apt install -f && apt clean && apt autoclean && apt autoremove -y'  
-alias lscript='source /home/amir/programs/lscript/l'  
+alias lscript='source /home/$USER/programs/lscript/l'  
 alias sudo='sudo -s'  
-alias sherlock='python3 /home/amir/programs/sherlock/sherlock/sherlock.py'  
+alias sherlock='python3 /home/$USER/programs/sherlock/sherlock/sherlock.py'  
 alias servicestat='service --status-all'  
-alias sublister='python3 /home/amir/programs/Sublist3r/sublist3r.py'  
+alias sublister='python3 /home/$USER/programs/Sublist3r/sublist3r.py'  
 
 then (source ~/.zshrc) & (source /home/$USER/.zshrc) to apply changes. Don't forget to change "$USER" to your username.
