@@ -23,18 +23,14 @@ Remember to setup zsh! and add this to your alias(nano /root/.zshrc) & in your u
 
 CHANGE $USER TO YOUR USERNAME.
 
-alias aptupdate='
-        dpkg --configure -a &&
-        apt update &&
-        apt upgrade -y &&
-        apt install -f &&
-        apt clean &&
-        apt autoclean &&
-        apt autoremove -y
-' 
-alias lscript='source /home/$USER/programs/lscript/l'
-alias sudo='sudo -s'
-alias sherlock='python3 /home/$USER/programs/sherlock/sherlock/sherlock.py'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias aptupdate='dpkg --configure -a && apt update && apt upgrade -y && apt install -f && apt clean && apt autoclean && apt autoremove -y'
+alias lscript='source /home/amir/programs/lscript/l' 
+alias sudo='sudo -s' 
+alias sherlock='python3 /home/amir/programs/sherlock/sherlock/sherlock.py' 
 alias servicestat='service --status-all'
+alias sublister='python3 /home/amir/programs/Sublist3r/sublist3r.py'
 
-then (source /root/.zshrc) & (source /home/$USER/.zshrc) to apply changes.
+then (source ~/.zshrc) & (source /home/$USER/.zshrc) to apply changes. Don't forget to change "$USER" to your username.
